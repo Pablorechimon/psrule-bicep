@@ -6,4 +6,4 @@ runs:
     - name: 'Analysis'
       shell: bash
       working-directory: ${{ github.workspace }}
-      run: psrule_configuration.sh
+      run: ./psrule_configuration.sh
