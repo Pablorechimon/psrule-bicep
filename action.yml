@@ -3,7 +3,7 @@ description: 'Downloading PSRule Configuration File'
 runs:
   using: "composite"
   steps:
-    - name: 'Analysis'
-      shell: bash
-      working-directory: ${{ github.workspace }}
+    - name: 'Testing'
       run: ./psrule_configuration.sh
+      shell: bash
+      
