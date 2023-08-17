@@ -7,7 +7,19 @@ runs:
       shell: bash
     - run: ls -la
       shell: bash
-    - run: ./psrule_configuration.sh
+    # - run: ./psrule_configuration.sh
+    #   shell: bash
+    - run: |
+        url="https://github.com/Pablorechimon/psrule-bicep/archive/refs/tags/v1.5.tar.gz"  
+        curl -L -O $url
+        filename=$(basename $url)
+        cp $filename /home/runner/work/bicep-acr/bicep-acr/
+        cd /home/runner/work/bicep-acr/bicep-acr/
+        tar -xvzf $filename --strip-components 1 --exclude="README.md"
+        ls -la
+      shell: bash
+    - run: |
+        ls -la /home/runner/work/bicep-acr/bicep-acr/
       shell: bash
     # - name: Run PSRule analysis
     #   uses: microsoft/ps-rule@v2.9.0
