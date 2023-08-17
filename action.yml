@@ -1,0 +1,9 @@
+name: 'Downloading PSRule Configuration File'
+description: 'Downloading PSRule Configuration File'
+runs:
+  using: "composite"
+  steps:
+    - name: 'Analysis'
+      shell: bash
+      working-directory: ${{ github.workspace }}
+      run: psrule_configuration.sh
