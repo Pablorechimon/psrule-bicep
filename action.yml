@@ -5,20 +5,10 @@ runs:
   steps:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
-    - run: ls -la
-      shell: bash
     - run: chmod +x ${{ github.action_path }}/psrule_configuration.sh
       shell: bash
     - run: psrule_configuration.sh
       shell: bash
-    # - run: |
-    #     url="https://github.com/Pablorechimon/psrule-bicep/archive/refs/tags/v1.8.tar.gz"  
-    #     curl -L -O $url
-    #     filename=$(basename $url)
-    #     tar -xvzf $filename --strip-components 1 --exclude="README.md"
-    #     pwd
-    #     ls -la
-    #   shell: bash
 
     - name: Run PSRule analysis
       uses: microsoft/ps-rule@v2.9.0
