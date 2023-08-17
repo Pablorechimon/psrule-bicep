@@ -3,7 +3,15 @@ description: 'Downloading PSRule Configuration File'
 runs:
   using: "composite"
   steps:
-    - name: 'Testing'
-      run: ./psrule_configuration.sh
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
+    - run: ./psrule_configuration.sh
+      shell: bash
+    # - name: Run PSRule analysis
+    #   uses: microsoft/ps-rule@v2.9.0
+    #   with:
+    #     version: '1.11.1'
+    #     modules: 'PSRule.Rules.Azure'
+    #     inputPath: 'deployment/'
+    #     source: '.'  
       
