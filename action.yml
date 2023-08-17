@@ -7,7 +7,7 @@ runs:
       shell: bash
     - run: ls -la
       shell: bash
-    - run: chmod +x psrule_configuration.sh
+    - run: chmod +x ${{ github.action_path }}/psrule_configuration.sh
       shell: bash
     - run: psrule_configuration.sh
       shell: bash
