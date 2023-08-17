@@ -7,8 +7,24 @@ include:
   module:
     # Import all the Azure Well-Architected Framework rules
     - PSRule.Rules.Azure
-#  exclude:
-#    - 'Azure.Resource.UseTags'
+
+rule:
+  # Enable local rules
+  includeLocal: true
+  exclude:
+    - Azure.Storage.UseReplication
+    - Azure.Storage.SoftDelete
+    - Azure.Storage.ContainerSoftDelete
+    - Azure.Storage.BlobPublicAccess
+    #    - 'Azure.Resource.UseTags'
+binding:
+  # Bindings are required for local rules
+  targetType:
+  - type
+  - resourceType (edited) 
+
+
+
     
 configuration:
   # Enable code analysis of bicep files
@@ -40,14 +56,5 @@ output:
   #culture: [ 'en-US' ]
   # Show results for rules with the Fail, Pass, or Error outcome
   #outcome: 'Processed'
-
-rule:
-  # Enable local rules
-  includeLocal: true
-binding:
-  # Bindings are required for local rules
-  targetType:
-  - type
-  - resourceType (edited) 
 
   
