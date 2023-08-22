@@ -1,5 +1,11 @@
 name: 'Downloading PSRule Configuration File'
 description: 'Downloading PSRule Configuration File'
+inputs:
+  inputPath: 
+    description: 'inputPath required for PSRule action to define where the Bicep Deployment is stored'
+    required: true
+    default: '.'
+
 runs:
   using: "composite"
   steps:
@@ -15,6 +21,6 @@ runs:
       with:
         version: '1.11.1'
         modules: 'PSRule.Rules.Azure'
-        inputPath: 'deployment/'
+        inputPath: ${{inputs.inputPath}}
         source: '.'  
       
