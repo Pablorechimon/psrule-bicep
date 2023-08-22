@@ -6,7 +6,7 @@ This action allow you to work with Bicep modules that lives on an ACR registry, 
 
 ## Instructions
 You can use this action by adding the next action to your workflow.
-# code block
+
     - name: Run PSRule
       uses: pablorechimon/psrule-bicep@latest
       with:
