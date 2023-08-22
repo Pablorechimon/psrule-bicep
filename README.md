@@ -12,6 +12,9 @@ You can use this action by adding the next action to your workflow.
       with:
         inputPath: 'string'
 
+### Inputs
+* **inputPath**: Path on your repo where the Bicep deployment file/s are stored.
+
 ## psrule-bicep file purpose
 
 ### PSRule Configuration Files.
