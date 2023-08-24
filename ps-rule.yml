@@ -16,6 +16,7 @@ rule:
     - Azure.Storage.SoftDelete
     - Azure.Storage.ContainerSoftDelete
     - Azure.Storage.BlobPublicAccess
+    - Azure.Storage.Firewall
     #    - 'Azure.Resource.UseTags'
 binding:
   # Bindings are required for local rules
